@@ -1,0 +1,3 @@
+.screen {
+    @apply w-full h-screen p-4 overflow-hidden bg-white rounded-md;
+}

@@ -7,9 +7,9 @@ type Props = {
 
 export default function Layout({ children }: Props) {
   return (
-    <div className="flex w-full overflow-hidden">
+    <div className="flex flex-grow w-full">
       <SideMenu />
-      <div className="flex-1 min-h-screen bg-slate-400">{children}</div>
+      <div className="flex-1">{children}</div>
     </div>
   );
 }
