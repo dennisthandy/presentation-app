@@ -6,3 +6,5 @@ export type PresentationData = {
 export type NoData = {
   message: string;
 };
+
+export type DropdownStyle = "collapse" | "float";

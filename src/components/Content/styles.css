@@ -1,3 +1,16 @@
 .screen {
-    @apply w-full h-screen p-4 overflow-hidden bg-white rounded-md;
+  @apply w-full h-screen p-4 overflow-hidden bg-white rounded-md;
+}
+
+.content {
+  animation: fade 750ms ease;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
 }

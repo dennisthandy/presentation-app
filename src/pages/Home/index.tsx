@@ -7,7 +7,7 @@ export default function Home() {
   const {state} = useContext(Context);
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center min-h-screen">
       <Link to="/presentation" className="p-2 text-white bg-blue-400 rounded">
         Presentasi Sekarang
       </Link>

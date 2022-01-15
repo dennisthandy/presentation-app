@@ -2,7 +2,8 @@ export const initialState = {
   menu: {
     data: [
       {
-        name: "Menu 1",
+        name: "Float Menu 1",
+        style: 'float',
         children: [
           { name: "Submenu 1" },
           { name: "Submenu 2" },
@@ -10,7 +11,8 @@ export const initialState = {
         ],
       },
       {
-        name: "Menu 2",
+        name: "Collapse Menu 1",
+        style: 'collapse',
         children: [
           { name: "Submenu 1" },
           { name: "Submenu 2" },
@@ -18,7 +20,17 @@ export const initialState = {
         ],
       },
       {
-        name: "Menu 3",
+        name: "Float Menu 2",
+        style: 'float',
+        children: [
+          { name: "Submenu 1" },
+          { name: "Submenu 2" },
+          { name: "Submenu 3" },
+        ],
+      },
+      {
+        name: "Collapse Menu 3",
+        style: 'collapse',
         children: [
           { name: "Submenu 1" },
           { name: "Submenu 2" },

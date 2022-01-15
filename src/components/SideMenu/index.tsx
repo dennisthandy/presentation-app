@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../../context";
+import { DropdownStyle } from "../../helper/types";
 import "./styles.css";
 
 export default function SideMenu() {
@@ -19,12 +20,26 @@ export default function SideMenu() {
     setShowSubmenu(temp);
   }
 
+  function isFloatStyle(style: DropdownStyle) {
+    return style === "float";
+  }
+
+  function isFloatFirst(menu: typeof data, index: number) {
+    const position = menu.findIndex((item) => item.style === "float");
+    console.log(position);
+    return position === 0 && index === 0;
+  }
+
   return (
-    <div className="w-64">
+    <div className="w-56">
       <ul className="menu">
         {data.map((item, index) => {
+          const isFloating = isFloatStyle(item.style as DropdownStyle);
           return (
-            <li className="menu-item" key={index}>
+            <li
+              className={`menu-item ${isFloating ? "relative" : ""}`}
+              key={index}
+            >
               <button
                 className={showSubmenu[index] ? "active" : ""}
                 type="button"
@@ -33,12 +48,17 @@ export default function SideMenu() {
                 {item.name}
               </button>
               {item.children && (
-                <ul className={`${showSubmenu[index] ? "open" : ""} submenu`}>
+                <ul
+                  className={`
+                  ${showSubmenu[index] ? "open" : ""} 
+                  ${isFloating ? "submenu--float" : "submenu"}
+                  ${isFloatFirst(data, index) ? "first" : ""}`}
+                >
                   {item.children.map((child, idx) => {
                     const key: string =
                       item.name.toLowerCase().replace(" ", "") +
                       child.name.toLowerCase().replace(" ", "");
-                      
+
                     return (
                       <li className="submenu-item" key={idx}>
                         <button

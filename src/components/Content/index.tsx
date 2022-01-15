@@ -18,21 +18,18 @@ export default function Content() {
     if (selectedContent) {
       setDisplayContent(selectedContent.data);
     } else {
-      setDisplayContent(undefined)
+      setDisplayContent(undefined);
     }
-    
   }, [menu.selected]);
 
   return (
     <div className="flex flex-col flex-grow h-screen p-2 bg-gray-300">
       <div className="screen">
-        {displayContent && (
-          <>
-            <p className="title">{displayContent?.title}</p>
-            <p className="description">{displayContent?.description}</p>
-          </>
-        )}
-        {!displayContent && <p>No content to display.</p>}
+        <div key={+new Date()} className="content animate">
+          <p className="title">{displayContent?.title}</p>
+          <p className="description">{displayContent?.description}</p>
+          {!displayContent && <p>No content to display.</p>}
+        </div>
       </div>
     </div>
   );
